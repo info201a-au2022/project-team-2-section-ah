@@ -5,8 +5,9 @@ In our project, we use the following data files and Application Programming Inte
 ## Data files (TODO: Update/delete for your PROJECT)
 |Data File Name | Brief Description|
 |---------------| -----------------|
-|[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
-|[another-file](./filename2.csv) | Description ... 
+|[transparency_active.csv](./transparency_active.csv) | This file contains Transparency International data from 2012-2021. 
+|[transparency_legacy.csv](./transparency_legacy.csv) | This file contains Transparency International data from 1995-2011. 
+|[wgidataset.csv](./wgidataset.csv) | This file contains Worldwide Governance Indicators data from 1996-2021. 
 
 ## Application Programming Interfaces (API) (TODO: Update/delete for your PROJECT)
 
@@ -22,3 +23,5 @@ Sellers lists and the books that have been reviewed in the New York Times. An ov
 * Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore, 
 aim for clarity and conciseness.
 * When done, be sure to delete these NOTE sections and the example CSV file (which are intended for you, of course, not your audience!)
+
+* 10/31/22: added transparency_active.csv, transparency_legacy.csv, and wgidataset.csv to data set
