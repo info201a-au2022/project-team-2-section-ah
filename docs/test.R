@@ -1,8 +1,5 @@
 library(tidyverse)
 
-#setwd("C:/Users/ryancho/Documents/info201/project-team-2-section-ah/data")
-# for this to work on your computer, you have to put your own directory ^^
-#getwd()
 
 df <- read.csv("transparency_active.csv", header = TRUE, stringsAsFactors = FALSE)
 
