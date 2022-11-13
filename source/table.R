@@ -1,6 +1,5 @@
 library(data.table)
 df <- read.csv("transparency_active.csv", header = TRUE, stringsAsFactors = FALSE)
-
 View(df)
 
 new_df <- df %>% 
