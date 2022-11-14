@@ -1,12 +1,9 @@
-library(tidyverse)
+#library(tidyverse)
+df <- read.csv("../data/transparency_active.csv", 
+               header = TRUE, 
+               stringsAsFactors = FALSE)
 
-#setwd("C:/Users/ryancho/Documents/info201/project-team-2-section-ah/data")
-# for this to work on your computer, you have to put your own directory ^^
-#getwd()
-
-df <- read.csv("transparency_active.csv", header = TRUE, stringsAsFactors = FALSE)
-
-View(df)
+#View(df)
 
 
 num_countries <- df %>% 
@@ -27,7 +24,7 @@ print(lowest_score)
 
 df <- df %>%
   mutate(location = paste0(country, ", ", region))
-View(df)
+#View(df)
 
 highest_score_location <- df %>% 
   filter(score == max(score, na.rm = TRUE)) %>% 

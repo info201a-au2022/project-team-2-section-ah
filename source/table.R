@@ -1,6 +1,8 @@
-library(data.table)
-df <- read.csv("transparency_active.csv", header = TRUE, stringsAsFactors = FALSE)
-View(df)
+#library(data.table)
+df <- read.csv("../data/transparency_active.csv", 
+               header = TRUE, 
+               stringsAsFactors = FALSE)
+#View(df)
 
 new_df <- df %>% 
   select(country, region, year, score, rank, standardError) %>% 

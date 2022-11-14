@@ -1,15 +1,17 @@
-#make sure to do this so that functions work
-install.packages("tidyverse")
-library(tidyverse)
-library(ggplot2)
+#library(tidyverse)
+#library(ggplot2)
 
-df <- read.csv("transparency_active.csv", header = TRUE, stringsAsFactors = FALSE)
+df <- read.csv("../data/transparency_active.csv", 
+               header = TRUE, 
+               stringsAsFactors = FALSE)
+#do this^ for file name
+#Session -> set wd -> to source...
 
-View(df)
+#View(df)
 
 df <- df %>%
   mutate(location = paste0(country, ", ", region))
-View(df)
+#View(df)
 
 lowest_score_location_df <-  df %>% 
   filter(score == min(score, na.rm = TRUE)) %>% 
@@ -17,7 +19,7 @@ lowest_score_location_df <-  df %>%
 print(lowest_score_location)
 
 lowest_score_data <- df %>%
-  filter(location == lowest_score_location) %>% 
+  filter(location == lowest_score_location) %>% #error here
   group_by(location)
 View(lowest_score_data)
 
