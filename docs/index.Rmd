@@ -20,9 +20,24 @@ getwd()
 ```{r}
 #make sure to go to Session -> Set Working Directory -> To Source File Location
 source("~/info201/project-team-2-section-ah/source/table.R")
-
-
 ```
+
+```{r}
+source("~/info201/project-team-2-section-ah/source/chart_1.R")
+```
+This scatterplot displays the scores over the years for the location with the most  transparent government. This chart has two numerical variables: year and score, and it shows the changes of scores over the years. The score describes the corruption/transparency level, with 100 being the most transparent and 0 being the most corrupt. There is an slight increase from 2012 to 2014, then a decrease from 2014 to 2017, and then it roughly stays the same. Since the score has not increased nor decreased from 2017, people believe the government is transparent and their opinion about them has not changed.
+
+```{r}
+source("~/info201/project-team-2-section-ah/source/chart_2.R")
+```
+(Paragraph for Chart 2)
+
+```{r}
+source("~/info201/project-team-2-section-ah/source/chart_3.R")
+```
+(Paragraph for Chart 3)
+
+
 
 ### Example 2: Initialize a variable and then use it
 ```{r}
