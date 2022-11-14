@@ -20,9 +20,7 @@ getwd()
 ```{r}
 #make sure to go to Session -> Set Working Directory -> To Source File Location
 source("~/info201/project-team-2-section-ah/source/table.R")
-source("~/info201/project-team-2-section-ah/source/chart_1.R")
-source("~/info201/project-team-2-section-ah/source/chart_2.R")
-source("~/info201/project-team-2-section-ah/source/chart_3.R")
+
 
 ```
 
