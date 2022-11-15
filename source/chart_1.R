@@ -14,11 +14,11 @@ df <- df %>%
 highest_score_location <- df %>% 
   filter(score == max(score, na.rm = TRUE)) %>% 
   pull(location)
-print(highest_score_location)
+#print(highest_score_location)
 
 highest_score_data <- df %>%
   filter(location == highest_score_location)
-View(highest_score_data)
+#View(highest_score_data)
 
 chart_1 <- ggplot(data = highest_score_data, mapping = aes(x = year, y = score)) + geom_point(shape=1) + 
           ggtitle("Scores Over the Years for the Location with the
