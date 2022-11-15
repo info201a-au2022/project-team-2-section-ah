@@ -24,6 +24,7 @@ library(ggplot2)
 ```{r}
 source("~/info201/project-team-2-section-ah/source/table.R")
 ```
+This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
 
 This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
 
