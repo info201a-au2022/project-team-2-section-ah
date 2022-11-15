@@ -21,6 +21,7 @@ getwd()
 #make sure to go to Session -> Set Working Directory -> To Source File Location
 source("~/info201/project-team-2-section-ah/source/table.R")
 ```
+This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_1.R")
@@ -30,7 +31,7 @@ This scatterplot displays the scores over the years for the location with the mo
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_2.R")
 ```
-This line chart illustrates the scores over the years for the location with the least transparent government. The chart displays the transparency scores in Afghanistan, North Korea, and Somalia. In 2012 to 2015, Somalia had a low transparency score of 8, meaning the government was corrupt. After 2015, the government was been slightly more transparent  with a high score of about 13 in 2022. This could have resulted in a change of government or new politics. Additionally, the score of North Korea skyrocketed from 2015 to 2017, possibly with more trust in the government. In just two years, the score doubled from approximately 8 in 2015 to 17 in 2016. However, after 2016, there was a slight decrease into 2018 and a greater increase after 2018. For Afghanistan, comparing the scores from 2013 to 2022, there has been an increase in transparency with the government. From 2012 to 2022, all three countries started with the lowest score of 8 in 2012 but since then, they have increased in transparency to 13-17.
+This line chart illustrates the scores over the years for the location with the least transparent government. The chart displays the transparency scores in Afghanistan, North Korea, and Somalia. In 2012 to 2015, Somalia had a low transparency score of 8, meaning the government was corrupt. After 2015, the government had been slightly more transparent  with a high score of about 13 in 2022. This could have resulted in a change of government or new politics. Additionally, the score of North Korea skyrocketed from 2015 to 2017, possibly with more trust in the government. In just two years, the score doubled from approximately 8 in 2015 to 17 in 2016. However, after 2016, there was a slight decrease into 2018 and a greater increase after 2018. For Afghanistan, comparing the scores from 2013 to 2022, there has been an increase in transparency with the government. From 2012 to 2022, all three countries started with the lowest score of 8 in 2012 but since then, they have increased in transparency to 13-17.
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_3.R")
