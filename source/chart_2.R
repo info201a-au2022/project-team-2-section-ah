@@ -1,4 +1,4 @@
-library(tidyverse)
+#library(tidyverse)
 #library(ggplot2)
 
 df <- read.csv("../data/transparency_active.csv", 
@@ -16,12 +16,12 @@ df <- df %>%
 lowest_score_location <-  df %>% 
   filter(score == min(score, na.rm = TRUE)) %>% 
   pull(location)
-print(lowest_score_location)
+#print(lowest_score_location)
 
 lowest_score_data <- df %>%
   filter(location == lowest_score_location) %>% #error here
   group_by(location)
-View(lowest_score_data)
+#View(lowest_score_data)
 
 chart_2 <- ggplot(data = lowest_score_data, mapping = aes(x = year, y = score)) + 
   ggtitle("Scores Over the Years for the Location with the 

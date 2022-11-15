@@ -5,14 +5,8 @@ these sub-directories (TODO: Update/Delete)
 
 |Source Directories | Brief Description|
 |---------------| -----------------|
-|[xxx](./xxx) | Description ... 
-|[xxx](./xxx) | Description ... 
-
-
-# DEVELOPER NOTE 1: About ... 
-* All source code for your projects should go in the `/source` directory
-* To organize your code, you might decide to create sub-directories
-* If you use sub-directories, plese briefly describe them in the table above
-* Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore, 
-aim for clarity and conciseness.
-* When done, be sure to delete this NOTE sections (which are intended for you, of course, not your audience!)
+|[Table](./table.R) | A table of aggregated data from our data set. It is grouped by the specific country. 
+|[Chart 1](./chart_1.R) | A scatterplot that shows the transparency scores of the most transparent government from 2012-2021.
+|[Chart 2](./chart_2.R) | A line chart that shows the transparency scores of the least transparent governments from 2012-2021.
+|[Chart 3](./chart_3.R) | A bar graph that shows the transparency scores of the most average transparent government from 2012-2021
+|[Summary Information](./summary_information.R) | A source file that holds all the calculated information for the dynamic paragraph.

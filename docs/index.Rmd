@@ -1,68 +1,55 @@
 ---
 title: "Government Corruption and Transparency"
-author: "Mason Koh, Tiffany Chung, Ryan Cho"
-date: "11/8/2022"
+author: "Ryan Cho, Tiffany Chung, Mason Koh"
+date: "11/14/2022"
 output: html_document
 ---                 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-list.files()
-getwd()
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
 ```{r}
-#make sure to go to Session -> Set Working Directory -> To Source File Location
+source("~/info201/project-team-2-section-ah/source/summary_information.R")
+```
+The summary information has the the number of countries included in the data set. The information also includes the highest and lowest score of the most corrupted and least corrupted government. The highest and lowest score information tells us what countries to trust and which to not, as well as which areas of the world might break out into war or have resolutions. The highest rank and lowest rank location allows us to be wary on both a personal and governmental level. It is valuable to know where exactly the most corruption is in the world as well as where the other corrupted countries are located. Understanding information on political corruption is important. If the country we live in wanted to create an alliance with a country highest on the index or if we discovered that the country we live in was the highest ranked corrupt country, this will determine the changes and political movements we want to take part of.
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(data.table)
+library(ggplot2)
+```
+
+
+```{r}
 source("~/info201/project-team-2-section-ah/source/table.R")
 ```
 This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
 
+This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
+
+
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_1.R")
 ```
+
 This scatterplot displays the scores over the years for the location with the most transparent government. This chart has two numerical variables: year and score, and it shows the changes of scores over the years. The score describes the corruption/transparency level, with 100 being the most transparent and 0 being the most corrupt. There is an slight increase from 2012 to 2014, then a decrease from 2014 to 2017, and then it roughly stays the same. Since the score has not increased nor decreased from 2017, people believe the government is transparent and their opinion about them has not changed.
+
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_2.R")
 ```
-This line chart illustrates the scores over the years for the location with the least transparent government. The chart displays the transparency scores in Afghanistan, North Korea, and Somalia. In 2012 to 2015, Somalia had a low transparency score of 8, meaning the government was corrupt. After 2015, the government had been slightly more transparent  with a high score of about 13 in 2022. This could have resulted in a change of government or new politics. Additionally, the score of North Korea skyrocketed from 2015 to 2017, possibly with more trust in the government. In just two years, the score doubled from approximately 8 in 2015 to 17 in 2016. However, after 2016, there was a slight decrease into 2018 and a greater increase after 2018. For Afghanistan, comparing the scores from 2013 to 2022, there has been an increase in transparency with the government. From 2012 to 2022, all three countries started with the lowest score of 8 in 2012 but since then, they have increased in transparency to 13-17.
+
+This line chart illustrates the scores over the years for the location with the least transparent government. The chart displays the transparency scores in Afghanistan, North Korea, and Somalia. In 2012 to 2015, Somalia had a low transparency score of 8, meaning the government was corrupt. After 2015, the government had been slightly more transparent with a high score of about 13 in 2022. This could have resulted in a change of government or new politics. Additionally, the score of North Korea skyrocketed from 2015 to 2017, possibly with more trust in the government. In just two years, the score doubled from approximately 8 in 2015 to 17 in 2016. However, after 2016, there was a slight decrease into 2018 and a greater increase after 2018. For Afghanistan, comparing the scores from 2013 to 2022, there has been an increase in transparency with the government. From 2012 to 2022, all three countries started with the lowest score of 8 in 2012 but since then, they have increased in transparency to 13-17.
+
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_3.R")
 ```
 (Paragraph for Chart 3)
 
-
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-#msg <- data_access_test(" Morgan!")
-```
-
-
 ## ABOUT THIS FILE: 
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
