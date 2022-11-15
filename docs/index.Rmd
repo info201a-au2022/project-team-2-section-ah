@@ -25,12 +25,12 @@ source("~/info201/project-team-2-section-ah/source/table.R")
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_1.R")
 ```
-This scatterplot displays the scores over the years for the location with the most  transparent government. This chart has two numerical variables: year and score, and it shows the changes of scores over the years. The score describes the corruption/transparency level, with 100 being the most transparent and 0 being the most corrupt. There is an slight increase from 2012 to 2014, then a decrease from 2014 to 2017, and then it roughly stays the same. Since the score has not increased nor decreased from 2017, people believe the government is transparent and their opinion about them has not changed.
+This scatterplot displays the scores over the years for the location with the most transparent government. This chart has two numerical variables: year and score, and it shows the changes of scores over the years. The score describes the corruption/transparency level, with 100 being the most transparent and 0 being the most corrupt. There is an slight increase from 2012 to 2014, then a decrease from 2014 to 2017, and then it roughly stays the same. Since the score has not increased nor decreased from 2017, people believe the government is transparent and their opinion about them has not changed.
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_2.R")
 ```
-(Paragraph for Chart 2)
+This line chart illustrates the scores over the years for the location with the least transparent government. The chart displays the transparency scores in Afghanistan, North Korea, and Somalia. In 2012 to 2015, Somalia had a low transparency score of 8, meaning the government was corrupt. After 2015, the government was been slightly more transparent  with a high score of about 13 in 2022. This could have resulted in a change of government or new politics. Additionally, the score of North Korea skyrocketed from 2015 to 2017, possibly with more trust in the government. In just two years, the score doubled from approximately 8 in 2015 to 17 in 2016. However, after 2016, there was a slight decrease into 2018 and a greater increase after 2018. For Afghanistan, comparing the scores from 2013 to 2022, there has been an increase in transparency with the government. From 2012 to 2022, all three countries started with the lowest score of 8 in 2012 but since then, they have increased in transparency to 13-17.
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_3.R")
