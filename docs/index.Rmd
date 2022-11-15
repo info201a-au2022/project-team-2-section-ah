@@ -8,24 +8,21 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
-source("~/info201/project-team-2-section-ah/source/summary_information.R")
-```
-The summary information has the the number of countries included in the data set. The information also includes the highest and lowest score of the most corrupted and least corrupted government. The highest and lowest score information tells us what countries to trust and which to not, as well as which areas of the world might break out into war or have resolutions. The highest rank and lowest rank location allows us to be wary on both a personal and governmental level. It is valuable to know where exactly the most corruption is in the world as well as where the other corrupted countries are located. Understanding information on political corruption is important. If the country we live in wanted to create an alliance with a country highest on the index or if we discovered that the country we live in was the highest ranked corrupt country, this will determine the changes and political movements we want to take part of.
-
-
 ```{r, include=FALSE}
 library(tidyverse)
 library(data.table)
 library(ggplot2)
 ```
 
+```{r}
+source("~/info201/project-team-2-section-ah/source/summary_information.R")
+```
+The summary information has the the number of countries included in the data set. The information also includes the highest and lowest score of the most corrupted and least corrupted government. The highest and lowest score information tells us what countries to trust and which to not, as well as which areas of the world might break out into war or have resolutions. The highest rank and lowest rank location allows us to be wary on both a personal and governmental level. It is valuable to know where exactly the most corruption is in the world as well as where the other corrupted countries are located. Understanding information on political corruption is important. If the country we live in wanted to create an alliance with a country highest on the index or if we discovered that the country we live in was the highest ranked corrupt country, this will determine the changes and political movements we want to take part of.
+
 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/table.R")
 ```
-This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
-
 This table shows the corruption ranking of 180 countries by year. It includes the columns of country, region, year, score, rank, and standard Error. The table gives two main dimensions of country and year. For each individual country, there is a time discrete interval. The region is the part of the world each country is considered to be in. Additionally, the rank tells how corrupt a country is in terms of international ranking and the score variable is a numerical scale used to set up the ranking. The standard Error is an estimate by how much the rankings might be off. 
 
 
@@ -46,7 +43,10 @@ This line chart illustrates the scores over the years for the location with the 
 ```{r}
 source("~/info201/project-team-2-section-ah/source/chart_3.R")
 ```
-(Paragraph for Chart 3)
+
+This bar chart displays the scores over the years for the location with the 
+most average transparent government, which is Tanzania. This chart has two  variables: year and score, and it shows the changes of scores over the years. The score describes the corruption/transparency level, with 100 being the most transparent and 0 being the most corrupt. There is a steady decrease from 2012 to 2015, and then a steady increase from 2016 to 2021. All in all, Tanzania has stayed in the middle of the pack across the whole data set, as it has the median score.
+
 
 ## ABOUT THIS FILE: 
 
