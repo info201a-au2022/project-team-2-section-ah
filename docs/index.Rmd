@@ -18,6 +18,11 @@ getwd()
 ## ACCESSING THE /source DIRECTORY
 ### Example 1: Source some code and run a function
 ```{r}
+source("~/info201/project-team-2-section-ah/source/summary_information.R")
+```
+The summary information has the the number of countries included in the data set. The information also includes the highest and lowest score of the most corrupted and least corrupted government. The highest and lowest score information tells us what countries to trust and which to not, as well as which areas of the world might break out into war or have resolutions. The highest rank and lowest rank location allows us to be wary on both a personal and governmental level. It is valuable to know where exactly the most corruption is in the world as well as where the other corrupted countries are located. Understanding information on political corruption is important. If the country we live in wanted to create an alliance with a country highest on the index or if we discovered that the country we live in was the highest ranked corrupt country, this will determine the changes and political movements we want to take part of.
+
+```{r}
 #make sure to go to Session -> Set Working Directory -> To Source File Location
 source("~/info201/project-team-2-section-ah/source/table.R")
 ```
