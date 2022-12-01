@@ -1,4 +1,4 @@
-# server.R
+#INFO 201 project server.R
 
 # packages
 library(tidyverse)
