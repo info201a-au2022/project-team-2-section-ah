@@ -14,6 +14,7 @@ country_coordinates <- read.csv("../data/average-latitude-longitude-countries.cs
 # write.csv(country_codes, file = "../data/countries_codes.csv")
 country_codes <- read.csv("../data/countries_codes.csv")
 
+world_happiness_df <- read.csv("../data/world-happiness-report.csv")
 #### trim data sets ####
 
 country_coordinates <- country_coordinates %>% 
@@ -35,6 +36,22 @@ transparency_active_df <- transparency_active_df %>%
 
 transparency_active_with_coordinates_df <- transparency_active_df %>% 
   left_join(country_coordinates, by = "code")
+
+#-----------------------------------------------------------------
+
+world_happiness_filter <- world_happiness_df %>% 
+  group_by(Country.name) %>% 
+  mutate(avgSocialSupport = mean(Social.support, na.rm = TRUE),
+         avgFreedom = mean(Freedom.to.make.life.choices, na.rm = TRUE), 
+         avgPerceptionCorruption = mean(Perceptions.of.corruption, na.rm = TRUE)) %>% 
+  select(Country.name, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
+names(world_happiness_filter)[1] <- "country"
+
+happiness_transparency_df <- transparency_active_df %>% 
+  left_join(world_happiness_filter, by = "country") %>% 
+  select(country, avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
+
+
 
 #### server ####
 server <- function(input, output) {
