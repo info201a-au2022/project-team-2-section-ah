@@ -62,6 +62,7 @@ summary_panel <- tabPanel(
   titlePanel("Government Transparency Summary")
 )
 
+
 #sidebarLayout(
 #  mainPanel(
 #    sliderInput("obs",
@@ -73,14 +74,16 @@ summary_panel <- tabPanel(
 #)
 
 
-
 ui <- navbarPage(
   "Government Transparency",
   introduction_panel,
   data_viz_panel_1,
   data_viz_panel_2,
   data_viz_panel_3,
-  summary_panel
+  summary_panel,
+  navbarMenu("More",
+             tabPanel("Sources"),
+             tabPanel("About us"))
 )
 
 #### extra notes ####
