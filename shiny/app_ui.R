@@ -5,31 +5,6 @@ introduction_panel <- tabPanel(
   titlePanel("Government Transparency Around the World")
 )
 
-data_viz_panel_2 <- tabPanel(
-  "Data Viz 2",
-  titlePanel("Data Vizualization 2")
-  )
-
-data_viz_panel_3 <- tabPanel(
-  "Data Viz 3",
-  titlePanel("Data Vizualization 3")
-)
-
-summary_panel <- tabPanel(
-  "Summary panel",
-  titlePanel("Government Transparency Summary")
-)
-
-#sidebarLayout(
-#  mainPanel(
-#    sliderInput("obs",
-#                "Number of observations:",
-#                min = 0,
-#                max = 1000,
-#                value = 500)
-#  )
-#)
-
 data_viz_panel_1 <- tabPanel(
   "Data Viz 1",
   titlePanel("Government Corruption: Who’s Honest, Who’s Lying, and Everyone In Between"),
@@ -52,6 +27,52 @@ data_viz_panel_1 <- tabPanel(
     )
   )
 )
+
+data_viz_panel_2 <- tabPanel(
+  "Data Viz 2",
+  titlePanel("World Happiness vs Government Transparency"),
+  sidebarLayout(      
+    
+    # creating sidebar with one input
+    sidebarPanel(
+      selectInput("factor", "Factors:", 
+                  choices = c("avgSocialSupport", "avgFreedom", "avgPerceptionCorruption")),
+      hr(),
+      helpText("Data from World Happiness Report from Kaggle Dataset"), 
+    
+      selectInput("score", "Average Transparency Score:", 
+                   choices = c("avgScore")),
+      hr(),
+      helpText("Data from Corruption Indicator Data Report from Kaggle Dataset")
+      ),
+    # creating a barplot
+    mainPanel(
+      plotOutput("happinessPlot")  
+    )
+  )
+)
+
+data_viz_panel_3 <- tabPanel(
+  "Data Viz 3",
+  titlePanel("Data Vizualization 3")
+)
+
+summary_panel <- tabPanel(
+  "Summary panel",
+  titlePanel("Government Transparency Summary")
+)
+
+#sidebarLayout(
+#  mainPanel(
+#    sliderInput("obs",
+#                "Number of observations:",
+#                min = 0,
+#                max = 1000,
+#                value = 500)
+#  )
+#)
+
+
 
 ui <- navbarPage(
   "Government Transparency",

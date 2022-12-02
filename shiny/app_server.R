@@ -47,11 +47,11 @@ world_happiness_filter <- world_happiness_df %>%
   select(Country.name, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 names(world_happiness_filter)[1] <- "country"
 
-happiness_transparency_df <- transparency_active_df %>% 
+happiness_transparency_df_v2 <- transparency_active_df %>% 
   left_join(world_happiness_filter, by = "country") %>% 
   select(country, avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 
-
+happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2))
 
 #### server ####
 server <- function(input, output) {
@@ -85,6 +85,16 @@ server <- function(input, output) {
         opacity = 1 # legend is opaque
       )
   })
+  
+  output$happinessPlot <- renderPlot({
+    
+    # Rendering a barplot to be used in app_ui
+    barplot(happiness_transparency_df, 
+            main = "Impact of Transparency Score on Other Factors",
+            ylab= input$factor,
+            xlab= input$score)
+  })
+  
 }
 
 
