@@ -46,7 +46,7 @@ happinessByCountry_with_coordinates <- world_happiness_df %>%
 
 #View(happinessByCountry_with_coordinates)
 #View(country_coordinates)
-View(transparency_active_df)
+#View(transparency_active_df)
 
 #----------------------------------------------------------------
 

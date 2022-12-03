@@ -67,7 +67,6 @@ summary_panel <- tabPanel(
 )
 
 
-
 #sidebarLayout(
 #  mainPanel(
 #    sliderInput("obs",
@@ -87,9 +86,17 @@ ui <- navbarPage(
   data_viz_panel_3,
   summary_panel,
   navbarMenu("More",
-             tabPanel("Sources"),
-             tabPanel("About us"))
+             tabPanel("Sources", titlePanel("Sources"),
+h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=transparency_active.csv"),
+h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=transparency_legacy.csv"),
+h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=wgidataset.csv")),
+             
+            tabPanel("About Us", titlePanel("About Us"),
+                      h5("Ryan Cho"),
+                      h5("Mason Koh"),
+                      h5("Tiffany Chung")))
 )
+
 
 #### extra notes ####
 # from 11/28 lecture
