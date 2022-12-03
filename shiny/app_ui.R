@@ -1,5 +1,9 @@
 # ui.R
 
+#install.packages("shinythemes")
+#library(shinythemes)
+#fluidPage(theme=shinytheme("slate"))
+
 introduction_panel <- tabPanel(
   "Introduction Panel",
   titlePanel("Government Transparency Around the World"),
@@ -9,7 +13,8 @@ introduction_panel <- tabPanel(
   h4("2. What years are characterized by the highest and lowest levels of government transparency?"),
   h4("3. Which regions/countries have the lowest levels of transparency?"),
   h4("4. What is the average change of ranking for each country?"),
-  h4("*insert image*")
+  h4("*insert image*"),
+  mainPanel(imageOutput("government"))
 )
 
 data_viz_panel_1 <- tabPanel(

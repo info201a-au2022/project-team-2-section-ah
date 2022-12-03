@@ -67,6 +67,7 @@ happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2))
 #### server ####
 server <- function(input, output) {
   
+  
   # Define a map to render in the UI
   output$transparency_active_map <- renderLeaflet({
     
@@ -137,9 +138,19 @@ server <- function(input, output) {
   
   }
   
-
-
-
+#----------------------------------------------------------------------------
+# !! feel free to replace the image 
+function(input, output) {
+  output$government <- renderImage({ 
+    filename <- normalizePath(file.path('./images','government.png'))
+    
+    list(src = filename,
+         contentType = 'image/png',
+         alt = "Government Transparency Image")
+  }, deleteFile = FALSE)
+  
+  
+}
 
 #### extra notes ####
 # from 11/28 lecture
