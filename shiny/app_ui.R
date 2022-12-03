@@ -2,7 +2,14 @@
 
 introduction_panel <- tabPanel(
   "Introduction Panel",
-  titlePanel("Government Transparency Around the World")
+  titlePanel("Government Transparency Around the World"),
+  h4("*brief overview*"),
+  h4("1. What are some commonalities between countries with low levels of transparency? 
+                What are commonalities between ones with high levels of transparency?"),
+  h4("2. What years are characterized by the highest and lowest levels of government transparency?"),
+  h4("3. Which regions/countries have the lowest levels of transparency?"),
+  h4("4. What is the average change of ranking for each country?"),
+  h4("*insert image*")
 )
 
 data_viz_panel_1 <- tabPanel(
@@ -62,10 +69,20 @@ data_viz_panel_3 <- tabPanel(
 
 
 summary_panel <- tabPanel(
-  "Summary panel",
-  titlePanel("Government Transparency Summary")
+  "Summary",
+  titlePanel("Government Transparency Summary"),
+  h4("*Takeaway 1*"),
+  h4("*Takeaway 2*"),
+  h4("*Takeaway 3*")
 )
 
+report_panel <- tabPanel(
+  "Report",
+  titlePanel("Government Transparency Report"),
+  h4("*Findings*"),
+  h4("*Discussion*"),
+  h4("*Conclusion*")
+)
 
 #sidebarLayout(
 #  mainPanel(
@@ -85,6 +102,7 @@ ui <- navbarPage(
   data_viz_panel_2,
   data_viz_panel_3,
   summary_panel,
+  report_panel,
   navbarMenu("More",
              tabPanel("Sources", titlePanel("Sources"),
 h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=transparency_active.csv"),
