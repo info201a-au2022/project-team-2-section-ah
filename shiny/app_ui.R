@@ -66,11 +66,28 @@ data_viz_panel_2 <- tabPanel(
 
 data_viz_panel_3 <- tabPanel(
   "Data Viz 3",
-  titlePanel("Happiness By Country")
-      
-    
-  )
+  # Application title
+  titlePanel("World Happiness"),
   
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+  sidebarPanel(
+  selectInput("factor", "Factors:", 
+  choices = c("avgSocialSupport", "avgFreedom", "avgPerceptionCorruption")),
+      
+      sliderInput("bins",
+                  "Number of bins:",
+                  min = 2,
+                  max = 20,
+                  value = 5)
+    ),
+    
+    # Show a plot of the generated distribution
+    mainPanel(
+      plotOutput("distPlot")
+    )
+  )
+)
 
 
 summary_panel <- tabPanel(

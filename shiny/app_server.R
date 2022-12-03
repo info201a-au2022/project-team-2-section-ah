@@ -37,17 +37,6 @@ transparency_active_df <- transparency_active_df %>%
 transparency_active_with_coordinates_df <- transparency_active_df %>% 
   left_join(country_coordinates, by = "code")
 
-country_coordinates <-country_coordinates %>% 
-  mutate(name=tolower("ISO.3166.Country.Code") ) 
-  
-happinessByCountry_with_coordinates <- world_happiness_df %>%
-  mutate(name= tolower("Country") )%>%
-  left_join(country_coordinates, by= "name")
-
-#View(happinessByCountry_with_coordinates)
-#View(country_coordinates)
-#View(transparency_active_df)
-
 #----------------------------------------------------------------
 
 world_happiness_filter <- world_happiness_df %>% 
@@ -99,44 +88,29 @@ server <- function(input, output) {
   })
 
 
-  #-------------------------------------------------------------------------  
-    output$happinessByCountry_map <- renderLeaflet({
-    palette_fn <- colorFactor(
-        palette = "Dark2",
-        domain = happinessByCountry_map[[input$analysis_var]]
-      )
-      
-  leaflet(data = happinessByCountry_map) %>%
-    addProviderTiles("Stamen.TonerLite") %>% # 
-    addCircleMarkers( 
-      lat = ~lat, 
-      lng = ~long, 
-      label = ~paste0(country, ", ", happinessByCountry_map[[input$analysis_var]]), 
-      color = ~palette_fn(happinessByCountry_map[[input$analysis_var]]),
-      fillOpacity = .7,
-      radius = 5,
-      stroke = FALSE
-    ) %>% 
-    addLegend( 
-      "bottomright",
-      title = "Legend",
-      pal = palette_fn, 
-      values = happinessByCountry_map[[input$analysis_var]],
-      opacity = 1 
-    )
-}) 
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------  
+   #histogram visualization
+   output$distPlot <- renderPlot({
+    # generate bins based on input$bins from ui.R
+     x <- happiness_transparency_df_v2 %>% pull(input$factor)
+     bins <- seq(min(x, na.rm = TRUE), max(x, na.rm = TRUE), length.out = input$bins + 1)
+     
+     # draw the histogram with the specified number of bins
+     hist(x, breaks = bins, col = 'darkgray', border = 'white',
+          main= paste("Histogram of", input$factor),
+          xlab= input$factor)
+   })
+}
 
-  output$happinessPlot <- renderPlot({
+#----------------------------------------------------------------------------
+#output$happinessPlot <- renderPlot({
     
-    # Rendering a barplot to be used in app_ui
-    barplot(happiness_transparency_df, 
-            main = "Impact of Transparency Score on Other Factors",
-            ylab= input$factor,
-            xlab= input$score)
-  })
-  
-  }
+   #Rendering a barplot to be used in app_ui
+#   barplot(happiness_transparency_df, 
+#          main = "Impact of Transparency Score on Other Factors",
+#           ylab= input$factor,
+#           xlab= input$score)
+# })
   
 #----------------------------------------------------------------------------
 # !! feel free to replace the image 
