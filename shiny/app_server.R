@@ -2,6 +2,8 @@
 
 # packages
 library(tidyverse)
+library(shiny)
+library(dplyr)
 
 #### Read in data ####
 transparency_active_df <- read.csv("../data/transparency_active.csv")
@@ -107,8 +109,8 @@ server <- function(input, output) {
     
    #Rendering a barplot to be used in app_ui
 #   barplot(happiness_transparency_df, 
-#          main = "Impact of Transparency Score on Other Factors",
-#           ylab= input$factor,
+#         main = "Impact of Transparency Score on Other Factors",
+#          ylab= input$factor,
 #           xlab= input$score)
 # })
   

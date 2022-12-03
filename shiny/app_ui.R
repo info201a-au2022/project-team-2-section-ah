@@ -129,12 +129,16 @@ ui <- navbarPage(
              tabPanel("Sources", titlePanel("Sources"),
 h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=transparency_active.csv"),
 h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=transparency_legacy.csv"),
-h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=wgidataset.csv")),
+h5("how_to_code. (2022, October 29). Corruption indicator data of 180 governments. Kaggle. Retrieved October 31, 2022, from https://www.kaggle.com/datasets/cvengr/government-corruption-data-of-180-countries?select=wgidataset.csv"),
+h5("Wang, A. (2013, February 13). Github. Retrieved December 3, 2022, from https://github.com/albertyw/avenews/blob/master/old/data/average-latitude-longitude-countries.csv"),
+h5("Duncalfe, L [lukes], jlewis91, Skop, M [michalskop], Wilde, N [NickDickinsonWilde], (2019, March 18). Github. Retrieved December 3, 2022, from https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv"),
+h5("hemil26. (2022). Kaggle. Retrieved December 3, 2022, from https://www.kaggle.com/datasets/hemil26/world-happiness-report-2022")),
+
              
             tabPanel("About Us", titlePanel("About Us"),
-                      h5("Ryan Cho"),
-                      h5("Mason Koh"),
-                      h5("Tiffany Chung")))
+                      h4("Ryan Cho"),
+                      h4("Mason Koh"),
+                      h4("Tiffany Chung")))
 )
 
 
