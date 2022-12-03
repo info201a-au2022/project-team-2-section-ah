@@ -54,13 +54,18 @@ data_viz_panel_2 <- tabPanel(
 
 data_viz_panel_3 <- tabPanel(
   "Data Viz 3",
-  titlePanel("Data Vizualization 3")
-)
+  titlePanel("Happiness By Country")
+      
+    
+  )
+  
+
 
 summary_panel <- tabPanel(
   "Summary panel",
   titlePanel("Government Transparency Summary")
 )
+
 
 
 #sidebarLayout(

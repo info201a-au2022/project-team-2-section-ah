@@ -37,7 +37,18 @@ transparency_active_df <- transparency_active_df %>%
 transparency_active_with_coordinates_df <- transparency_active_df %>% 
   left_join(country_coordinates, by = "code")
 
-#-----------------------------------------------------------------
+country_coordinates <-country_coordinates %>% 
+  mutate(name=tolower("ISO.3166.Country.Code") ) 
+  
+happinessByCountry_with_coordinates <- world_happiness_df %>%
+  mutate(name= tolower("Country") )%>%
+  left_join(country_coordinates, by= "name")
+
+#View(happinessByCountry_with_coordinates)
+#View(country_coordinates)
+View(transparency_active_df)
+
+#----------------------------------------------------------------
 
 world_happiness_filter <- world_happiness_df %>% 
   group_by(Country.name) %>% 
@@ -65,7 +76,7 @@ server <- function(input, output) {
       domain = transparency_active_with_coordinates_df[[input$analysis_var]]
     )
     
-    # Create and return the map
+    # Create and return the map 
     leaflet(data = transparency_active_with_coordinates_df) %>%
       addProviderTiles("Stamen.TonerLite") %>% # This is for the outline of the map
       addCircleMarkers( # add circle markers for each country
@@ -85,7 +96,36 @@ server <- function(input, output) {
         opacity = 1 # legend is opaque
       )
   })
-  
+
+
+  #-------------------------------------------------------------------------  
+    output$happinessByCountry_map <- renderLeaflet({
+    palette_fn <- colorFactor(
+        palette = "Dark2",
+        domain = happinessByCountry_map[[input$analysis_var]]
+      )
+      
+  leaflet(data = happinessByCountry_map) %>%
+    addProviderTiles("Stamen.TonerLite") %>% # 
+    addCircleMarkers( 
+      lat = ~lat, 
+      lng = ~long, 
+      label = ~paste0(country, ", ", happinessByCountry_map[[input$analysis_var]]), 
+      color = ~palette_fn(happinessByCountry_map[[input$analysis_var]]),
+      fillOpacity = .7,
+      radius = 5,
+      stroke = FALSE
+    ) %>% 
+    addLegend( 
+      "bottomright",
+      title = "Legend",
+      pal = palette_fn, 
+      values = happinessByCountry_map[[input$analysis_var]],
+      opacity = 1 
+    )
+}) 
+#----------------------------------------------------------------------------
+
   output$happinessPlot <- renderPlot({
     
     # Rendering a barplot to be used in app_ui
@@ -95,7 +135,10 @@ server <- function(input, output) {
             xlab= input$score)
   })
   
-}
+  }
+  
+
+
 
 
 #### extra notes ####
