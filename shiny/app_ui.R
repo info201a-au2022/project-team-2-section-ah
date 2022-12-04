@@ -11,9 +11,9 @@ introduction_panel <- tabPanel(
   h4("*brief overview*"),
   h4("1. What are some commonalities between countries with low levels of transparency? 
                 What are commonalities between ones with high levels of transparency?"),
-  h4("2. What years are characterized by the highest and lowest levels of government transparency?"),
+  h4("2. Are there geographic trends to the levels of government transparency?"),
   h4("3. Which regions/countries have the lowest levels of transparency?"),
-  h4("4. What is the average change of ranking for each country?"),
+  h4("4. How does government transparency impact other factors such as freedom or social support?"),
   h4("*insert image*"),
   mainPanel(imageOutput("government"))
 )
