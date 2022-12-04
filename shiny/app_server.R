@@ -58,11 +58,6 @@ happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2)) %>%
   ungroup(country) %>% 
   select(avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 
-View(happiness_transparency_df)
-View(world_happiness_filter)
-
-#happiness_transparency_df1 <- t(happiness_transparency_df)
-
 
 #### server ####
 server <- function(input, output) {
