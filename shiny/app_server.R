@@ -116,8 +116,9 @@ output$happinessPlot <- renderPlot({
    #Rendering a barplot to be used in app_ui
    barplot(as.matrix(happiness_transparency_df[,input$factor]), 
          main = "Impact of Transparency Score on Other Factors",
-          ylab= input$score,
-           xlab= input$factor)
+          ylab= input$score
+         #dont need xlab because it is created by the input$factor
+         )
  })
 
 }
