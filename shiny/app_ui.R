@@ -159,6 +159,33 @@ report_panel <- tabPanel(
   shinythemes::themeSelector(),
   titlePanel("Government Transparency Report"),
   h4("*Findings*"),
+  p(paste0("After filtering through data on government transparency scores, rankings, and 
+           its impact on other factors, our group has come across various important findings 
+           regarding the existence of a noticeable global trend. Government transparency 
+           levels seem to follow a geographic trend with the lowest scores being clustered 
+           around Middle Eastern countries and higher scores being located further out such 
+           as in European or American countries. For example, countries such as the US or 
+           France have higher scores - ranging from 50-70 - whereas countries such as Syria 
+           tend to have lower scores - ranging from 13.5 or lower. As such, commonalities 
+           between countries with low and high levels of transparency is their geographic 
+           location. This, in turn, suggests the existence of geographic trends in government 
+           corruption because certain areas in the world have much higher and lower transparency 
+           scores. Along with this trend, our research has found that these transparency 
+           scores are impacting other factors such as freedom or social support levels. 
+           Lower transparency scores correspond to significantly lower levels of these factors. 
+           For example, an average transparency score of 13.6 would correspond to an average 
+           social support score of 0.5084 and an average freedom score of 0.5181 and 0.843 
+           for the perception of corruption value. In contrast, an average transparency 
+           score of 78.5 corresponds to an average social support score of 0.9473 and an 
+           average freedom score of 0.9217 and only 0.4155 for the perception of corruption 
+           value. The change in transparency levels was accompanied by a drastic change in 
+           the levels of the other factors; both the freedom and social support levels 
+           almost doubled while the amount of perceived corruption dropped by over 50%. 
+           This holds true not only for this singular data point, but for a large portion 
+           of the dataset, which reveals important trends in the governments around the 
+           world and how their transparency impacts the lives of those who live under 
+           their oversight."), 
+    style = "font-family: 'times'; font-si16pt"),
   h4("*Discussion*"),
   h4("*Conclusion*")
 )
