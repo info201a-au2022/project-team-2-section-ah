@@ -93,9 +93,26 @@ data_viz_panel_3 <- tabPanel(
 summary_panel <- tabPanel(
   "Summary",
   titlePanel("Government Transparency Summary"),
-  h4("*Takeaway 1*"),
-  h4("*Takeaway 2*"),
-  h4("*Takeaway 3*")
+  h4("*Takeaway for Data Vizualization 1*"),
+  h4("*Takeaway for Data Vizualization 2*"),
+  p(paste0("This data visualization is a bar chart that compares the average transparency 
+           score of a country to other factors such as its social support, freedom, or perceived 
+           government corruption. The visualization is made up of multiple bars stacked on 
+           top of each other. In the context of social support, darker sections mean that the 
+           bars are stacked very closely together which represents low levels of social support. 
+           In contrast, the lighter sections mean that the bars are spaced more apart from each 
+           other - more white space - which represents higher levels of social support; higher 
+           values of social support result in wider bars. With this in mind, when looking at all 
+           of the factors, a trend becomes clear; as the average transparency score of a country 
+           increases, other factors such as the average levels of social support or freedom increase. 
+           For all of these factors, lower transparency scores are accompanied by darker sections 
+           whereas higher scores are marked by lighter sections. Ultimately, a key takeaway from 
+           this project and data visualization is that government transparency levels are very 
+           important because they impact countless other factors that directly tie to the well-being 
+           of the country as a whole."), 
+    style = "font-family: 'times'; font-si16pt"
+  ),
+  h4("*Takeaway for Data Vizualization 3*")
 )
 
 report_panel <- tabPanel(
