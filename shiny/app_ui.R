@@ -6,6 +6,7 @@
 
 introduction_panel <- tabPanel(
   "Introduction Panel",
+  shinythemes::themeSelector(),
   titlePanel("Government Transparency Around the World"),
   h4("*brief overview*"),
   h4("1. What are some commonalities between countries with low levels of transparency? 
@@ -19,6 +20,7 @@ introduction_panel <- tabPanel(
 
 data_viz_panel_1 <- tabPanel(
   "Data Viz 1",
+  shinythemes::themeSelector(),
   titlePanel("Government Corruption: Who’s Honest, Who’s Lying, and Everyone In Between"),
   
   # Sidebar with a selectInput for the variable for analysis
@@ -43,6 +45,7 @@ data_viz_panel_1 <- tabPanel(
 
 data_viz_panel_2 <- tabPanel(
   "Data Viz 2",
+  shinythemes::themeSelector(),
   titlePanel("World Happiness vs Government Transparency"),
   sidebarLayout(      
     
@@ -76,6 +79,7 @@ data_viz_panel_2 <- tabPanel(
 
 data_viz_panel_3 <- tabPanel(
   "Data Viz 3",
+  shinythemes::themeSelector(),
   # Application title
   titlePanel("World Happiness"),
   
@@ -102,6 +106,7 @@ data_viz_panel_3 <- tabPanel(
 
 summary_panel <- tabPanel(
   "Summary",
+  shinythemes::themeSelector(),
   titlePanel("Government Transparency Summary"),
   h4("*Takeaway for Data Vizualization 1*"),
   h4("*Takeaway for Data Vizualization 2*"),
@@ -151,6 +156,7 @@ summary_panel <- tabPanel(
 )
 report_panel <- tabPanel(
   "Report",
+  shinythemes::themeSelector(),
   titlePanel("Government Transparency Report"),
   h4("*Findings*"),
   h4("*Discussion*"),
