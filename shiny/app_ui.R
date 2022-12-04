@@ -56,7 +56,16 @@ data_viz_panel_2 <- tabPanel(
       selectInput("score", "Average Transparency Score:", 
                    choices = c("avgScore")),
       hr(),
-      helpText("Data from Corruption Indicator Data Report from Kaggle Dataset")
+      helpText("Data from Corruption Indicator Data Report from Kaggle Dataset"),
+      p(paste0("Summary: This stacked bar chart reveals trends between a country’s transparency 
+               score and the impact that it has on other factors such as freedom or 
+               amount of reported social support. The darker areas mean that the lines 
+               are stacked closer together which represents lower numbers or levels of 
+               the selected factor. The lighter areas mean that the lines are more 
+               separated which represents higher numbers and levels of the selected 
+               factor."),
+        style = "font-family: 'times'; font-si16pt"
+        )
       ),
     # creating a barplot
     mainPanel(
