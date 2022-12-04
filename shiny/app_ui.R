@@ -7,7 +7,7 @@
 introduction_panel <- tabPanel(
   "Introduction Panel",
   shinythemes::themeSelector(),
-  titlePanel("Government Transparency Around the World"),
+  titlePanel("Government Corruption: Who’s Honest, Who’s Lying, and Everyone In Between"),
   h4("*brief overview*"),
   h4("1. What are some commonalities between countries with low levels of transparency? 
                 What are commonalities between ones with high levels of transparency?"),
@@ -21,7 +21,7 @@ introduction_panel <- tabPanel(
 data_viz_panel_1 <- tabPanel(
   "Data Viz 1",
   shinythemes::themeSelector(),
-  titlePanel("Government Corruption: Who’s Honest, Who’s Lying, and Everyone In Between"),
+  titlePanel("Government Transparency Around the World"),
   
   # Sidebar with a selectInput for the variable for analysis
   sidebarLayout(
