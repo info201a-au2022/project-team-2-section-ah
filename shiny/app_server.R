@@ -53,7 +53,13 @@ happiness_transparency_df_v2 <- transparency_active_df %>%
   left_join(world_happiness_filter, by = "country") %>% 
   select(country, avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 
-happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2))
+happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2)) %>% 
+  ungroup(country) %>% 
+  select(avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
+
+
+#happiness_transparency_df1 <- t(happiness_transparency_df)
+
 
 #### server ####
 server <- function(input, output) {
@@ -102,17 +108,19 @@ server <- function(input, output) {
           main= paste("Histogram of", input$factor),
           xlab= input$factor)
    })
-}
+
 
 #----------------------------------------------------------------------------
-#output$happinessPlot <- renderPlot({
-    
+
+output$happinessPlot <- renderPlot({
    #Rendering a barplot to be used in app_ui
-#   barplot(happiness_transparency_df, 
-#         main = "Impact of Transparency Score on Other Factors",
-#          ylab= input$factor,
-#           xlab= input$score)
-# })
+   barplot(as.matrix(happiness_transparency_df[,input$factor]), 
+         main = "Impact of Transparency Score on Other Factors",
+          ylab= input$score,
+           xlab= input$factor)
+ })
+
+}
   
 #----------------------------------------------------------------------------
 # !! feel free to replace the image 
