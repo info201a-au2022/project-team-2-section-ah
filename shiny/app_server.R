@@ -39,6 +39,7 @@ transparency_active_df <- transparency_active_df %>%
 transparency_active_with_coordinates_df <- transparency_active_df %>% 
   left_join(country_coordinates, by = "code")
 
+
 #----------------------------------------------------------------
 
 world_happiness_filter <- world_happiness_df %>% 
@@ -57,6 +58,8 @@ happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2)) %>%
   ungroup(country) %>% 
   select(avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 
+View(happiness_transparency_df)
+View(world_happiness_filter)
 
 #happiness_transparency_df1 <- t(happiness_transparency_df)
 

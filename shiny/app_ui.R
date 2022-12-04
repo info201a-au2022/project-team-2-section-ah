@@ -113,9 +113,33 @@ summary_panel <- tabPanel(
            of the country as a whole."), 
     style = "font-family: 'times'; font-si16pt"
   ),
-  h4("*Takeaway for Data Vizualization 3*")
-)
+  h4("*Takeaway for Data Vizualization 3*"),
+  p(paste0("This visualization is a histogram that shows a category of avgSocialSupport, avgFreedom, 
+           or avgPerceptionCorruption on the horizontal axis, and how frequent the factor is in the
+           vertical axis (height). There are numbers that range from 0 to 1 on the horizontal axis.
+           The height of each bar shows the frequency value that the data values appear in the
+           categories. Sliding to a number of bins allows us to see the distribution of a factor.
+           The number of bins means how many regions (bars) the raw data is separated into. 
+           For instance, the factor avgSocialSupport for 3 bins shows that there is a low frequency 
+           for the 0.4 to 0.6 range but the most frequent is at 0.8 to 1. The higher the frequency 
+           means that there are more countries with that social support. Changing the number of bins 
+           to 8, the histogram of or the avgSocialSupport factor is separated into 8 bars. The
+           intervals are smaller, and the distribution is seen in more detail. It has the same 
+           interpretation, but we can see the highest (most frequent) bar with more precision.  
+           At 8 bins, we can see a tail, and a peak around 0.8 (most frequent social support),
+           and it slightly decreases as it has a lower height. That means it is a bit less 
+           frequent, and there are fewer countries with social support. The higher number of
+           countries have social support between 0.8 and 1. More countries are closer to 1,
+           so they have a higher social support.  The distribution of AvgFreedom is slightly 
+           left-skewed and has a mean value of around 0.75.  AvgPerceptionCorruption has a 
+           left skew and a mean value of about 0.85.  The distribution of the avgSocialSupport
+           has a mean value of about 0.85 and is not symmetric and is left skewed, as we can 
+           see a lower frequency in the left tail and most of the data is in the right tail. 
+           Overall, avgSocialSupport and AvgPerceptionCorruption are higher on average than avgFreedom."),
+    style = "font-family: 'times'; font-si16pt"
+),
 
+)
 report_panel <- tabPanel(
   "Report",
   titlePanel("Government Transparency Report"),
@@ -123,6 +147,7 @@ report_panel <- tabPanel(
   h4("*Discussion*"),
   h4("*Conclusion*")
 )
+
 
 #sidebarLayout(
 #  mainPanel(
