@@ -88,8 +88,8 @@ data_viz_panel_3 <- tabPanel(
   sidebarPanel(
   selectInput("factor", "Factors:", 
   choices = c("avgSocialSupport", "avgFreedom", "avgPerceptionCorruption")),
-      
-      sliderInput("bins",
+  
+  sliderInput("bins",
                   "Number of bins:",
                   min = 2,
                   max = 20,
@@ -102,6 +102,7 @@ data_viz_panel_3 <- tabPanel(
     )
   )
 )
+
 
 
 summary_panel <- tabPanel(

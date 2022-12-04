@@ -58,6 +58,10 @@ happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2)) %>%
   ungroup(country) %>% 
   select(avgScore, avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 
+happiness_transparency_df_v3 <- unique(happiness_transparency_df) %>% 
+  select(avgSocialSupport, avgFreedom, avgPerceptionCorruption)
+
+View(happiness_transparency_df_v3)
 
 #### server ####
 server <- function(input, output) {
@@ -103,7 +107,7 @@ server <- function(input, output) {
    #histogram visualization
    output$distPlot <- renderPlot({
     # generate bins based on input$bins from ui.R
-     x <- happiness_transparency_df_v2 %>% pull(input$factor)
+     x <- happiness_transparency_df_v3 %>% pull(input$factor)
      bins <- seq(min(x, na.rm = TRUE), max(x, na.rm = TRUE), length.out = input$bins + 1)
      
      # draw the histogram with the specified number of bins
