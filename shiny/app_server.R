@@ -74,6 +74,11 @@ server <- function(input, output) {
       domain = transparency_active_with_coordinates_df[[input$analysis_var]]
     )
     
+    palette_values <- transparency_active_with_coordinates_df %>% 
+      filter(input$analysis_var == max(input$analysis_var)) %>% 
+      arrange(input$analysis_var)
+    palette_values <- palette_values[seq(1, nrow(palette_values), 184), ]
+    
     # Create and return the map 
     leaflet(data = transparency_active_with_coordinates_df) %>%
       addProviderTiles("Stamen.TonerLite") %>% # This is for the outline of the map
@@ -83,15 +88,15 @@ server <- function(input, output) {
         label = ~paste0(country, ", ", transparency_active_with_coordinates_df[[input$analysis_var]]), # label ideas: country, rank, score??
         color = ~palette_fn(transparency_active_with_coordinates_df[[input$analysis_var]]), # set color w/ input
         fillOpacity = .7,
-        radius = 5,
+        radius = 50 / transparency_active_with_coordinates_df[[input$analysis_var]],
         stroke = FALSE
       ) %>% 
-      addLegend( # include a legend on the plot
+      addLegend( 
         "bottomright",
         title = "Legend",
-        pal = palette_fn, # the palette to label
-        values = transparency_active_with_coordinates_df[[input$analysis_var]],
-        opacity = 1 # legend is opaque
+        pal = palette_fn, 
+        values = palette_values[[input$analysis_var]],
+        opacity = 1  
       )
   })
 
@@ -136,68 +141,3 @@ function(input, output) {
   
   
 }
-
-#### extra notes ####
-# from 11/28 lecture
-# needs library(plotly) in app.R
-# ouput$map <- ggplot(state_shape) +
-#   p <- geom_polygon(
-#     mapping = aes(x = long, y = lat, group = group),
-#     fill = "black",
-#     color = "white",
-#     linewidth = .5,
-#     ) +
-#     coord_map()
-#   p
-# chapter 16 has more map stuff w/ geom polygon
-# Shinji says use leaflet for map (see X13)
-
-# use pivot_longer() and names_to() to turn columns into data points (kinda)
-# use ggplotly() to easily turn plots interactive
-
-
-#EXAMPLE
-# shootings <- read.csv("https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/fatal-police-shootings-data.csv", stringsAsFactors = FALSE)
-# server <- function(input, output) {
-#   
-#   # Define a map to render in the UI
-#   output$shooting_map <- renderLeaflet({
-#     
-#     # Construct a color palette (scale) based on chosen analysis variable
-#     palette_fn <- colorFactor(
-#       palette = "Dark2",
-#       domain = shootings[[input$analysis_var]]
-#     )
-#     
-#     # Create and return the map
-#     leaflet(data = shootings) %>%
-#       addProviderTiles("Stamen.TonerLite") %>% # add Stamen Map Tiles
-#       addCircleMarkers( # add markers for each shooting
-#         lat = ~latitude,
-#         lng = ~longitude,
-#         label = ~paste0(name, ", ", age), # add a label: name and age
-#         color = ~palette_fn(shootings[[input$analysis_var]]), # set color w/ input
-#         fillOpacity = .7,
-#         radius = 4,
-#         stroke = FALSE
-#       ) %>%
-#       addLegend( # include a legend on the plot
-#         "bottomright",
-#         title = "legend",
-#         pal = palette_fn, # the palette to label
-#         values = shootings[[input$analysis_var]], # double-bracket notation
-#         opacity = 1 # legend is opaque
-#       )
-#   })
-#   
-#   # Define a table to render in the UI
-#   output$grouped_table <- renderTable({
-#     table <- shootings %>%
-#       group_by(shootings[[input$analysis_var]]) %>%
-#       count() %>%
-#       arrange(-n)
-#     
-#     colnames(table) <- c(input$analysis_var, "Number of Victims") # format column names
-#     table # return the table
-#   })
-# }

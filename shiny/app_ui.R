@@ -26,8 +26,9 @@ data_viz_panel_1 <- tabPanel(
     sidebarPanel(
       selectInput(
         inputId = "analysis_var",
-        label = "Variable to analyze",
-        choices = c("avgScore", "avgRank", "avgStandardError")
+        label = "Factors",
+        choices = list("Average Transparency Score (smaller = better)" = "avgScore",
+                       "Average Global Ranking (bigger = better)" = "avgRank")
       )
     ),
     
@@ -157,19 +158,3 @@ h5("hemil26. (2022). World Happiness Report 2022. Kaggle. Retrieved December 3, 
                       h4("Mason Koh"),
                       h4("Tiffany Chung")))
 )
-
-
-#### extra notes ####
-# from 11/28 lecture
-# ui <- navbarPage('title',
-#         tabPanel('map',
-#                  sidebarLayout(
-#                    sidebarPanel(
-#                      selectInput('mapvar', label = "variable to map", choices = ...)
-#                    ),
-#                    mainPanel(
-#                      plotlyOutput('map')
-#                    )
-#                  )
-#         )
-#       ) 
