@@ -1,0 +1,13 @@
+name: government-corruption
+title: government-corruption
+username:
+account: mason-koh
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7819455
+bundleId: 6595141
+url: https://mason-koh.shinyapps.io/government-corruption/
+when: 1670265673.54447
+lastSyncTime: 1670265673.5445
+asMultiple: FALSE
+asStatic: FALSE

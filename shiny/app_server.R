@@ -1,9 +1,11 @@
 #INFO 201 project server.R
 
 # packages
-library(tidyverse)
 library(shiny)
-library(dplyr)
+library(tidyverse)
+library(leaflet)
+library(plotly)
+
 
 #### Read in data ####
 transparency_active_df <- read.csv("../data/transparency_active.csv")

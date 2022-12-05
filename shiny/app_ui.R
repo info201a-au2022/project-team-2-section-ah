@@ -3,6 +3,11 @@
 #install.packages("shinythemes")
 library(shinythemes)
 #fluidPage(theme=shinytheme("slate"))
+library(shiny)
+library(tidyverse)
+library(leaflet)
+library(plotly)
+
 
 introduction_panel <- tabPanel(
   "Introduction Panel",
@@ -24,8 +29,8 @@ introduction_panel <- tabPanel(
                What are commonalities between ones with high levels of transparency?"),
   h5("2. Are there geographic trends to the levels of government transparency?"),
   h5("3. Which regions/countries have the lowest levels of transparency?"),
-  h5("4. How does government transparency impact other factors such as freedom or social support?"),
-  imageOutput("image")
+  h5("4. How does government transparency impact other factors such as freedom or social support?")
+  #imageOutput("image")
   )
 
 data_viz_panel_1 <- tabPanel(
