@@ -133,12 +133,14 @@ output$happinessPlot <- renderPlot({
 #----------------------------------------------------------------------------
 # !! feel free to replace the image 
 function(input, output) {
-  output$government <- renderImage({ 
+  output$image <- renderImage({ 
+    
     filename <- normalizePath(file.path('./images','government.png'))
     
     list(src = filename,
          contentType = 'image/png',
          alt = "Government Transparency Image")
+  
   }, deleteFile = FALSE)
   
   

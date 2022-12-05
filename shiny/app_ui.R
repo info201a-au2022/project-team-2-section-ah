@@ -8,19 +8,27 @@ introduction_panel <- tabPanel(
   "Introduction Panel",
   shinythemes::themeSelector(),
   titlePanel("Government Corruption: Who’s Honest, Who’s Lying, and Everyone In Between"),
-  h4("*brief overview*"),
-  h4("1. What are some commonalities between countries with low levels of transparency? 
-                What are commonalities between ones with high levels of transparency?"),
-  h4("2. Are there geographic trends to the levels of government transparency?"),
-  h4("3. Which regions/countries have the lowest levels of transparency?"),
-  h4("4. How does government transparency impact other factors such as freedom or social support?"),
-  h4("*insert image*"),
-  mainPanel(imageOutput("government"))
-)
+  h4("Overview"),
+  p(paste0("For our project, we decided to focus on government corruption around the world.
+           With the rise of social media and communication speed at an all-time high, it is
+           important to understand that not everything that we see or hear is true,
+           especially when it comes to the government. Our project will analyze government
+           transparency index scores, which are calculated based on several different factors
+           such as bribery, diversion of public funds, and access to information on public
+           affairs/government activities. The data set we will use is called, “Corruption 
+           Indicator Data of 180 Governments”, which references data compiled by Transparency
+           International, World Bank, and World Economic Forum.")),
+  h4("Questions to Consider: "),
+  h5("1. What are some commonalities between countries with low levels of transparency? 
+               What are commonalities between ones with high levels of transparency?"),
+  h5("2. Are there geographic trends to the levels of government transparency?"),
+  h5("3. Which regions/countries have the lowest levels of transparency?"),
+  h5("4. How does government transparency impact other factors such as freedom or social support?"),
+  imageOutput("image")
+  )
 
 data_viz_panel_1 <- tabPanel(
   "Data Viz 1",
-  shinythemes::themeSelector(),
   titlePanel("Government Transparency Around the World"),
   
   # Sidebar with a selectInput for the variable for analysis
@@ -56,7 +64,6 @@ data_viz_panel_1 <- tabPanel(
 
 data_viz_panel_2 <- tabPanel(
   "Data Viz 2",
-  shinythemes::themeSelector(),
   titlePanel("World Happiness vs Government Transparency"),
   sidebarLayout(      
     
@@ -90,21 +97,29 @@ data_viz_panel_2 <- tabPanel(
 
 data_viz_panel_3 <- tabPanel(
   "Data Viz 3",
-  shinythemes::themeSelector(),
   # Application title
   titlePanel("World Happiness"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
-  sidebarPanel(
-  selectInput("factor", "Factors:", 
-  choices = c("avgSocialSupport", "avgFreedom", "avgPerceptionCorruption")),
+    sidebarPanel(
+      selectInput("factor", "Factors:", 
+        choices = c("avgSocialSupport", "avgFreedom", "avgPerceptionCorruption")),
   
-  sliderInput("bins",
+      sliderInput("bins",
                   "Number of bins:",
                   min = 2,
                   max = 20,
-                  value = 5)
+                  value = 5),
+    hr(),
+    p(paste0("Summary: This histogram displays how frequently the factor takes on values in 
+    the different ranges. This model considers happiness to be determined by three factors: 
+    average social support, average freedom, and average perception corruption. The values 
+    on the horizontal axis are values of one of the factors chosen and the vertical axis are
+    frequencies, or counts of how many data points had values of that factor within the range.
+    For instance, the values for the average social support range from 0.4 to 1.0, and are 
+    left-skewed with the majority of the values between 0.8 to 1.0."),
+      style = "font-family: 'times'; font-si16pt")
     ),
     
     # Show a plot of the generated distribution
@@ -118,7 +133,6 @@ data_viz_panel_3 <- tabPanel(
 
 summary_panel <- tabPanel(
   "Summary",
-  shinythemes::themeSelector(),
   titlePanel("Government Transparency Summary"),
   h4("*Takeaway for Data Vizualization 1*"),
   p(paste0("This data visualization is a map that compares all of the countries by average transparency
@@ -191,7 +205,6 @@ summary_panel <- tabPanel(
 )
 report_panel <- tabPanel(
   "Report",
-  shinythemes::themeSelector(),
   titlePanel("Government Transparency Report"),
   h4("*Findings*"),
   p(paste0("After filtering through data on government transparency scores, rankings, and 
@@ -222,20 +235,59 @@ report_panel <- tabPanel(
            their oversight."), 
     style = "font-family: 'times'; font-si16pt"),
   h4("*Discussion*"),
-  h4("*Conclusion*")
+  p(paste0("As the world becomes increasingly digitized and data-driven, information has
+  become more and more important in our day-to-day lives. Now, more than ever, it is faster
+  and easier to access information, as it lives on our fingertips through mobile phones and
+  computers. If a celebrity says, posts, tweets, or shares information in some way, anybody
+  can see it in a matter of seconds. This is especially relevant for governments, as they are
+  constantly giving their citizens information, and it is important they are telling the truth
+  and the whole story. The government should be a reliable source of information for the public,
+  an authority that the people can trust will provide and protect for them, but clearly that is
+  not the case everywhere in the world. As we have found in the data visualizations, some
+  governments are more transparent with their citizens than others. The two countries with the
+  lowest average ranking over the last decade in terms of transparency score were Somalia and 
+  South Sudan. Both of these countries have struggled with stability within their governments 
+  in recent years, and have numerous suspicions of corruption to their name. The third lowest 
+  ranking country was North Korea, a totalitarian dictatorship whose government is notorious 
+  for controlling all of the information that flows into and out of the country. Meanwhile, the
+  four highest ranking countries (Denmark, New Zealand, Finland, and Sweden) all implement some 
+  form of parliamentary system into their government. This is not to say that one style of 
+  government is inherently better than another, or advocating for everyone to change their 
+  government to match Denmark’s; however, these countries are clearly doing something right, and
+  it leads to high levels of social support and freedom, and less perception of corruption (on average),
+  which makes citizens happier overall. All of this is to say that government transparency 
+  (or lack thereof) affects citizens everywhere, good or bad. More often than not, the government 
+  is a source of fear and insecurity, when it should be a symbol to protect and provide. Improving 
+  global happiness starts at the top, and that means governments need to be more transparent and 
+  honest with the public."), 
+    style = "font-family: 'times'; font-si16pt"),
+  h4("*Conclusion*"),
+  p(paste0("Low government transparency corresponds to lower quality of life scores for their 
+  respective countries. If an individual wanted to move to a country and found out their score was
+  12, but they had another option to move to a country that had a score of 40, that would impact 
+  their decision. Presumably, the people are moving because they want a higher quality of life, more
+  social support, more freedom, and less perception of corruption. If the only option that was 
+  observable was government transparency, then it would make sense to choose a country with more 
+  transparency because it is predictive of whether the country has a higher quality of life. Government
+  transparency can affect an individual's decision about which country to move to, but that would 
+  depend on what that individual values – the quality of life metrics or the government transparency.
+  My main challenge with this argument is that correlation does not imply causation, and it could be
+  the case that the same factors that caused the quality of life metrics to be low may also be related
+  to low government transparency. In other words, simply making a government more transparent may not 
+  solve the underlying problems causing a lower quality of life. One could challenge the argument by 
+  stating that transparency is not what is causing increases in the quality of life, such as freedom 
+  and social support.  For instance, a country with a corrupt and incompetent government will be less
+  transparent because it does not want its incompetence to be exposed. Because the government is
+  incompetent, the quality of life in that country is also low. If the government then decided to 
+  become more transparent, it would not suddenly improve the quality of life in that country, but it 
+  would have to address the root cause – the corrupt and incompetence. By citing the correlation 
+  between the quality of life and transparency, we have concluded that higher transparency leading to
+  a higher quality of life is not fully substantiated. We cannot definitively conclude whether a casual
+  relationship between government and quality of life exists. Just because higher transparency 
+  corresponds to a higher quality of life does not mean that a country can simply adopt higher 
+  transparency and improve the quality of life."), 
+    style = "font-family: 'times'; font-si16pt")
 )
-
-
-#sidebarLayout(
-#  mainPanel(
-#    sliderInput("obs",
-#                "Number of observations:",
-#                min = 0,
-#                max = 1000,
-#                value = 500)
-#  )
-#)
-
 
 ui <- navbarPage(
   "Government Transparency",
