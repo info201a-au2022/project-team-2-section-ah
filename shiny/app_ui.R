@@ -41,13 +41,13 @@ data_viz_panel_1 <- tabPanel(
                        "Average Global Ranking (bigger = better)" = "avgRank")
       ),
       hr(),
-      p(paste0("Summary: This stacked bar chart reveals trends between a country’s transparency 
-               score and the impact that it has on other factors such as freedom or 
-               amount of reported social support. The darker areas mean that the lines 
-               are stacked closer together which represents lower numbers or levels of 
-               the selected factor. The lighter areas mean that the lines are more 
-               separated which represents higher numbers and levels of the selected 
-               factor."),
+      p(paste0("Summary: This interactive map visualization shows the average
+               transparency scores and global rankings of countries over the 
+               last 10 years. The value is represented by a bubble in the middle
+               of the country; the bigger the bubble, the lower the value, and
+               vice versa. So when the map shows average ranking, bigger bubbles
+               are higher ranks, but when the map shows average score, the bigger
+               bubbles are lower scores."),
         style = "font-family: 'times'; font-si16pt"
       )
     ),
