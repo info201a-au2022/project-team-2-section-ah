@@ -61,7 +61,7 @@ happiness_transparency_df <- na.omit(unique(happiness_transparency_df_v2)) %>%
 happiness_transparency_df_v3 <- unique(happiness_transparency_df) %>% 
   select(avgSocialSupport, avgFreedom, avgPerceptionCorruption)
 
-View(happiness_transparency_df_v3)
+#View(happiness_transparency_df_v3)
 
 #### server ####
 server <- function(input, output) {

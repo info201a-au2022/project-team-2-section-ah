@@ -11,7 +11,6 @@ library(shiny)
 library(tidyverse)
 library(leaflet)
 library(plotly)
-library(dplyr)
 
 # for more stuff on shiny, see chapter 19
 

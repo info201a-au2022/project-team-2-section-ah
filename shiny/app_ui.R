@@ -31,8 +31,19 @@ data_viz_panel_1 <- tabPanel(
         label = "Factors",
         choices = list("Average Transparency Score (smaller = better)" = "avgScore",
                        "Average Global Ranking (bigger = better)" = "avgRank")
+      ),
+      hr(),
+      p(paste0("Summary: This stacked bar chart reveals trends between a country’s transparency 
+               score and the impact that it has on other factors such as freedom or 
+               amount of reported social support. The darker areas mean that the lines 
+               are stacked closer together which represents lower numbers or levels of 
+               the selected factor. The lighter areas mean that the lines are more 
+               separated which represents higher numbers and levels of the selected 
+               factor."),
+        style = "font-family: 'times'; font-si16pt"
       )
     ),
+    
     
     # Display the map and table in the main panel
     mainPanel(
@@ -110,6 +121,29 @@ summary_panel <- tabPanel(
   shinythemes::themeSelector(),
   titlePanel("Government Transparency Summary"),
   h4("*Takeaway for Data Vizualization 1*"),
+  p(paste0("This data visualization is a map that compares all of the countries by average transparency
+            score or average global ranking (in transparency score) from 2012 to 2021. This is 
+            represented with a unique color bubble in the center of each country. In the context of the
+            average transparency score, the smaller the bubble is, the higher the score is for that 
+            country, which means it was more transparent with its citizens (which is good). In the 
+            context of the average global ranking, the bigger the bubble is, the higher the country was
+            ranked in terms of transparency score, which is good. After looking at the bubbles on both 
+            maps, a trend emerges from the data set: European countries are more transparent with their 
+            citizens, while the Middle Eastern and African countries are less transparent with their 
+            citizens. In the map with the average global ranking of transparency scores, the biggest 
+            bubbles were in Europe, including Denmark (1.1), Finland (2.6), Sweden (3.9), and 
+            Switzerland (4.9). This is good, as it means that the governments are being very honest with
+            its citizens in how the country is being operated, and the citizens can have more trust that
+            they are doing the right thing. In the map with the average transparency scores, the biggest
+            bubbles were in the Middle East and Africa, including Somalia (9.5), South Sudan (12.7),
+            Afghanistan (13.6), and Sudan (14.5). This is generally worse, as it means that the government
+            is hiding things from the public and not telling citizens everything, which leads to mistrust 
+            in the government. Additionally, less transparency often means more corruption. The key
+            takeaway from this visualization is that within the last decade, European governments have 
+            been the most transparent with their citizens, while Middle Eastern and African countries have
+            been less transparent."), 
+    style = "font-family: 'times'; font-si16pt"
+  ),
   h4("*Takeaway for Data Vizualization 2*"),
   p(paste0("This data visualization is a bar chart that compares the average transparency 
            score of a country to other factors such as its social support, freedom, or perceived 
