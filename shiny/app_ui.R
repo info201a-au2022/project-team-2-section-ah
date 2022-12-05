@@ -1,12 +1,13 @@
 # ui.R
 
 #install.packages("shinythemes")
-#library(shinythemes)
+library(shinythemes)
 #fluidPage(theme=shinytheme("slate"))
 
 introduction_panel <- tabPanel(
   "Introduction Panel",
   shinythemes::themeSelector(),
+  fluidPage(theme=shinytheme("sandstone")),
   titlePanel("Government Corruption: Who’s Honest, Who’s Lying, and Everyone In Between"),
   h4("Overview"),
   p(paste0("For our project, we decided to focus on government corruption around the world.
