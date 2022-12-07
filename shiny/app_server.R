@@ -109,13 +109,13 @@ server <- function(input, output) {
    #histogram visualization
    output$distPlot <- renderPlot({
     # generate bins based on input$bins from ui.R
-     x <- happiness_transparency_df_v3 %>% pull(input$factor)
+     x <- happiness_transparency_df_v3 %>% pull(input$factor3)
      bins <- seq(min(x, na.rm = TRUE), max(x, na.rm = TRUE), length.out = input$bins + 1)
      
      # draw the histogram with the specified number of bins
      hist(x, breaks = bins, col = 'darkgray', border = 'white',
-          main= paste("Histogram of", input$factor),
-          xlab= input$factor)
+          main= paste("Histogram of", input$factor3),
+          xlab= input$factor3)
    })
 
 

@@ -109,7 +109,7 @@ data_viz_panel_3 <- tabPanel(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      selectInput("factor", "Factors:", 
+      selectInput("factor3", "Factors:", 
         choices = c("avgSocialSupport", "avgFreedom", "avgPerceptionCorruption")),
   
       sliderInput("bins",
