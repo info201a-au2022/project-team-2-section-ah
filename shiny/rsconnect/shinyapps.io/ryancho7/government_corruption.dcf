@@ -1,0 +1,13 @@
+name: government_corruption
+title: government_corruption
+username:
+account: ryancho7
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7819512
+bundleId: 6595188
+url: https://ryancho7.shinyapps.io/government_corruption/
+when: 1670266091.37106
+lastSyncTime: 1670266091.37107
+asMultiple: FALSE
+asStatic: FALSE

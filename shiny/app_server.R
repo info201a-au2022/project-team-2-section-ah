@@ -8,17 +8,17 @@ library(plotly)
 
 
 #### Read in data ####
-transparency_active_df <- read.csv("../data/transparency_active.csv")
+transparency_active_df <- read.csv("./data/transparency_active.csv")
 
 # country_coordinates <- read.csv("https://raw.githubusercontent.com/albertyw/avenews/master/old/data/average-latitude-longitude-countries.csv", stringsAsFactors = FALSE)
 # write.csv(country_coordinates, file = "../data/average-latitude-longitude-countries.csv")
-country_coordinates <- read.csv("../data/average-latitude-longitude-countries.csv")
+country_coordinates <- read.csv("./data/average-latitude-longitude-countries.csv")
 
 # country_codes <- read.csv("https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv", stringsAsFactors = FALSE)
 # write.csv(country_codes, file = "../data/countries_codes.csv")
-country_codes <- read.csv("../data/countries_codes.csv")
+country_codes <- read.csv("./data/countries_codes.csv")
 
-world_happiness_df <- read.csv("../data/world-happiness-report.csv")
+world_happiness_df <- read.csv("./data/world-happiness-report.csv")
 #### trim data sets ####
 
 country_coordinates <- country_coordinates %>% 
